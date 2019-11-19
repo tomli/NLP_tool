@@ -2,10 +2,9 @@
 var AV = require('leanengine');
 
 
-var APP_ID = process.env.LEANCLOUD_APP_ID || 'xxxxxxxxxxxxxxxxxxxxxxxx'; // 你的 app id
-var APP_KEY = process.env.LEANCLOUD_APP_KEY || 'xxxxxxxxxxxxxxxxxxxxxxxx'; // 你的 app key
-var MASTER_KEY = process.env.LEANCLOUD_APP_MASTER_KEY || 'xxxxxxxxxxxxxxxxxxxxxxxx'; // 你的 master key
-
+var APP_ID = process.env.LEANCLOUD_APP_ID || '1yw5ol8u3tr302beaifyf97zt8kdlngmhsswqb2b9lio9hrh'; // 你的 app id
+var APP_KEY = process.env.LEANCLOUD_APP_KEY || '6nst4k2ev8khuoszvvklmp320fctgpq7brj159sqfxy9bpiq'; // 你的 app key
+var MASTER_KEY = process.env.LEANCLOUD_APP_MASTER_KEY || 'lgvuunpfo0t8d0nma4qtb25ht0mvve3j9bfywybftx6lk7ne'; // 你的 master key
 
 /*
 

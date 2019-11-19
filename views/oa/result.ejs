@@ -1,7 +1,7 @@
 <div style="margin-top: 80px">
   <div class="text-center"><h3>摘要</h3></div>
   <div class="alert alert-success" role="alert">
-    <strong><%=result['summary']%></strong>
+    <strong><%=result['summary']||result['error_msg']||'调用云服务出错，请联系开发者Tom！'%></strong>
   </div>
 
   <p class="info-back-btn">

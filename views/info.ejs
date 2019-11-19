@@ -1,0 +1,16 @@
+<div>
+  <div class="alert alert-success" role="alert">
+    <strong><%-info%></strong>
+  </div>
+
+  <p class="info-back-btn">
+    <a href="<% if(backLink){ %><%= backLink %><% }else{ %>javascript:history.back()<% } %>" class="btn btn-default">返回</a>
+  </p>
+</div>
+<% if(redirectUrl){ %>
+<script>
+  setTimeout(function() {
+    window.location.href = '<%= redirectUrl %>';
+  }, 3000);
+</script>
+<% } %>

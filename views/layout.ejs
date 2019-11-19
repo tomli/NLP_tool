@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--
+  -->
+  <link rel="icon" href="/images/grain-organicfood-v1-codrops-wojciechzasina.svg">
+
+  <title><%=config.siteName%></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/resource/bootstrap3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="/resource/jquery.min.js"></script>
+  <style>
+  @media print{
+    body {-webkit-print-color-adjust: exact;}
+  }
+  </style>
+</head>
+
+<!--<body style="padding-top: 0;font-size: < %=fontSize%>px">-->
+<body style="padding-top: 20px;font-size: 20px">
+<div class="container" >
+
+    <div class="text-center">
+            <p><%=config.siteName%></p>
+    </div>
+
+    <%- body %>
+
+
+  <hr>
+
+  <footer>
+      <% include footer.ejs %>
+  </footer>
+
+</div><!--/.container-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/resource/bootstrap3.3.6/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/resource/site/js/ie10-viewport-bug-workaround.js"></script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="offcanvas"]').click(function () {
+            $('.row-offcanvas').toggleClass('active')
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#bookmarkme").click(function() {
+            join_favorite(document.title, location.href);
+        });
+    });
+
+
+    function join_favorite(siteUrl, siteName){
+        //捕获加入收藏过程中的异常
+        try        {
+//判断浏览器是否支持document.all
+            if(document.all){
+//如果支持则用external方式加入收藏夹
+                window.external.addFavorite(siteUrl,siteName);
+            }else if(window.sidebar){
+                //如果支持window.sidebar，则用下列方式加入收藏夹
+                window.sidebar.addPanel(siteName, siteUrl,'');
+            }
+        }
+            //处理异常
+        catch (e)        {
+            alert("请使用Ctrl+D快捷键进行添加操作!");
+        }
+    }
+
+</script>
+</body>
+</html>

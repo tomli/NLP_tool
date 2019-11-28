@@ -1,4 +1,4 @@
-var config = require('../cloud/config.js');
+var config = require('../hw_config');
 var utils = require('../hw-sdk/utils');
 var ais = require('../hw-sdk/ais');
 var https = require("https");   // 加载node.js内置的https的模块
